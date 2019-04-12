@@ -67,35 +67,51 @@ class list
 	}
 	void insert_before(int a, int val)
 	{
-		int f=0;
 		if(head!= NULL)
 		{
 			node t = new nod;
 			t->data = val;
 			node pre = new nod;
 			node aft = new nod;
-			aft = head;
-			while(aft->data != a)
+			pre = aft = head;
+			if(pre->data != a)
 			{
-				f=1;
-				pre = aft;
 				aft = aft->next;
-			}
-			if(f=0)
+			while(aft->data != a )
 			{
-				t->next = head;
-				head = t;
+				aft = aft->next;
+				pre = pre->next;
+			}
+			pre->next = t;
+			t->next = aft;
 			}
 			else
 			{
-			pre = aft;
-			aft = aft->next;
-			pre->next = t;
-			t->next = aft;
+			 t->next = head;
+			 head = t;
 			}
 		}
 		else
 	    cout<<"Empty List";
+		
+	}
+	void delete_node(int val)
+	{
+		node pre = new nod;
+		node aft = new nod;
+		pre = aft = head;
+		if(pre->data != val)
+		{
+			aft = aft->next;
+			while(aft->data != val)
+			{
+				aft = aft->next;
+				pre = pre->next;
+			}
+			aft = aft->next;
+			pre->next = aft;
+			
+		}
 		
 	}
 	
@@ -103,47 +119,46 @@ class list
 int main()
 {
 	list a;
-	int b,c,d,e,f;
-/*	while (true)
+	int b,c,d,e,f,g,h,i;
+	while (true)
 	{
-		cout<<"1.Insert a number"<<'\n'<<"2.Insert after"<<'\n'<<"3.Insert before"<<'\n'<<"4.Delete after"<<'\n'<<"5.Delete Before"<<'\n'<<"6.Display\n";
+		cout<<"1.Insert a number"<<'\n'<<"2.Insert after"<<'\n'<<"3.Insert before"<<'\n'<<"4.Delete"<<'\n'<<"5.Display\n";
 		cin>>d;
 		switch(d)
 		{
 			case 1 : 
-			cout<<"\nEnter the number to be inserted:";
-			cin>>b;
-			a.insert(b);
-			break;
+				cout<<"\nEnter the number to be inserted:";
+				cin>>b;
+				a.insert(b);
+				break;
 			case 2 :
-			cout<<"Enter number";
-			cin>>e;
-			cout<<"after";
-			cin>>d;
-			a.insert_after(d,e);
-			break;
-			case 6 :
+				cout<<"Enter number";
+				cin>>e;
+				cout<<"after";
+				cin>>d;
+				a.insert_after(d,e);
+				break;
+			case 3:
+				cout<<"Enter number";
+				cin>>g;
+				cout<<"before";
+				cin>>h;
+				a.insert_before(h,g);
+				break;
+			case 4:
+				cout<"\nEnter the number to be deleted";
+				cin>>i;
+				a.delete_node(i);
+			case 5 :
 			a.display();
 			break;
 		}
+		cout<<"\nPress 1 to continue and 0 to exit : \n";
+		cin>>c;
+		if(c == 0)
+		break;
 	}
-		*/
-		
-		a.insert(1);
-		a.insert(2);
-		a.insert(3);
-		a.insert(4);
-		a.insert(6);
-		a.display();
-		a.insert_after(4,5);
-		a.display();
-		a.insert_before(1,0);
-		a.display();
 	
-//	cout<<"\nPress 1 to continue and 0 to exit : \n";
-	//	cin>>c;
-	//	if(c == 0)
-	//	break;
 
 	return 0;
 	
