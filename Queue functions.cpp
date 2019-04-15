@@ -49,7 +49,7 @@ class queue
 int main() 
 {
 	queue obj;
-	bool a= true;
+	bool a = true;
 	while (a == true)
 	{
 		cout<<"1.push\n2.pop\n3.display\n4.exit\n";
