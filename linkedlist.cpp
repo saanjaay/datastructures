@@ -9,7 +9,7 @@ typedef struct nod *node;
 class list 
 {
 	private:
-		node head,tail;
+		node head , tail;
 	public:
 		list()
 		{
