@@ -38,7 +38,6 @@ class bt
 					cout<<"\nleft\n";
 					return;
 				}
-				
 			}
 			else
 			{
@@ -53,15 +52,40 @@ class bt
 			}
 			
 		}
+		void inorder(node t)
+		{
+			if(t == NULL)
+			return;
+			inorder(t->left);
+			cout<<t->data<<"\t";
+			inorder(t->right);
+		}
+		void preorder(node t)
+		{
+			if(t== NULL)
+			return;
+			cout<<t->data<<"\t";
+			preorder(t->left);
+			preorder(t->right);
+		}
+		void postorder(node t)
+		{
+			if(t == NULL)
+			return;
+			postorder(t->left);
+			postorder(t->right);
+			cout<<t->data<<"\t";
+		}
 		
 };
 int main()
 {
 	bt obj;
+	int i = 0;
 	while(true)
 	{
 	int a;
-	cout<<"1.insert\n2.delete\n3.Inorder Travasal\n4.Preorder Travasal\n5.Postorder Travasal\n6.Exit\n";
+	cout<<"\npress 1 to insert\n";
 	cin>>a;
 	switch(a)
 	{
@@ -74,7 +98,15 @@ int main()
 			temp->left = NULL;
 			temp->right = NULL;
 			obj.insert(temp,root);
-			break;			
 }
+if(a == 2)
+break;
 }
+			obj.inorder(root);
+			cout<<"\n";
+			obj.preorder(root);
+			cout<<"\n";
+			obj.postorder(root);
+
+return 0;
 }
