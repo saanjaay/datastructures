@@ -102,10 +102,11 @@ int main()
 if(a == 2)
 break;
 }
+			cout<<"inorder\n":
 			obj.inorder(root);
-			cout<<"\n";
+			cout<<"preorder\n";
 			obj.preorder(root);
-			cout<<"\n";
+			cout<<"postorder\n";
 			obj.postorder(root);
 
 return 0;
