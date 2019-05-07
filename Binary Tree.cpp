@@ -25,7 +25,7 @@ class bt
 			}
 			if(temp->data == trav->data)
 			{
-				cout<"\nalready exists\n";
+				cout<"\nAlready exists\n";
 				return;
 			}
 			if(temp->data < trav->data)
@@ -50,7 +50,6 @@ class bt
 					return;
 				}
 			}
-			
 		}
 		void inorder(node t)
 		{
@@ -102,7 +101,7 @@ int main()
 if(a == 2)
 break;
 }
-			cout<<"inorder\n":
+			cout<<"inorder\n";
 			obj.inorder(root);
 			cout<<"preorder\n";
 			obj.preorder(root);
